@@ -1,0 +1,55 @@
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+body {
+	background-color: blue;
+}
+
+table, th, td {
+border: 1px solid black;
+}
+
+table {
+border-collapse: collapse;
+margin: auto;
+}
+
+th, td{
+padding: 10px;
+text-align: center;
+width: 120px;
+}
+
+th{
+font-weight: bold;
+}
+
+
+tr:nth-child(even) {
+background-color: #DCEBE6;
+}
+
+tr:hover:nth-child(1n + 2) {
+background-color: #085F63;
+color: #fff;
+}
+
+.icon {
+  margin-top: 8px;
+  margin-right: 28px;
+  margin-left: auto;
+  height: 9.6vh;
+  width: 9.6vh;
+  border-radius: 50%;
+}
+
+.box-amigos {
+
+	background-color: white;
+	width: auto;
+	height: auto;
+}
+

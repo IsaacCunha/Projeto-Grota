@@ -1,0 +1,39 @@
+banco
+
+create database grota;
+
+use grota;
+
+create table fotos (
+	id_fotos int(9) auto_increment not null primary key,
+	nome_fotos varchar(255) not null,
+	data datetime
+);
+create table amigos (
+	id_campo int(9) auto_increment not null primary key,
+	id_conta int(9) not null,
+	id_amigo int(9) not null,
+	apelido_amigo varchar(255) not null,
+	fk_nome_fotos varchar(255) not null
+);
+create table contas (
+	id int(9) auto_increment not null primary key,
+	nome varchar(60) not null,
+	apelido varchar(60) not null,
+	email varchar(255) not null,
+	senha varchar(255) not null,
+	descricao varchar(255),
+	data date
+);
+
+create table notificacao (
+	id_notifica int(9) auto_increment not null primary key,
+	id_conta int(9) not null,
+	id_amigo int(9) not null,
+	apelido varchar(255) not null
+);
+
+------------------------------------ campo lógico ------------------------------------
+
+ALTER TABLE contas ADD CONSTRAINT fk_nome_fotos FOREIGN KEY(fk_nome_fotos) REFERENCES fotos(nome_fotos
+);
