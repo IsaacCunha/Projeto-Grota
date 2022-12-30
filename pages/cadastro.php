@@ -6,9 +6,19 @@
 </head>
 <body>
 
+
+
 	<form name="cadastro" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
 
-		<input type="text" name="nome" placeholder="como você se chama?"> <br> <br>
+		<?php 
+		
+			if(isset($_SESSION['nome_next'])){
+				echo '<input type="text" name="nome" value="'.$_SESSION["nome_next"].'">';
+			}else{
+				echo '<input type="text" name="nome" placeholder="como você se chama?"> <br> <br>';
+			}
+		?>
+		
 		<input type="text" name="apelido" placeholder="como quer ser chamado?"> <br> <br>
 		<input type="email" name="email" placeholder="qual seu email?"> <br> <br>
 		<input type="password" name="senha" placeholder="********"> <br> <br>

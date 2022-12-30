@@ -1,21 +1,19 @@
 body {
 
-	background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  width: 100vw;
-  height: 100vh;
-
+	background-color: rgb(34, 34, 34);
+  color: white;
+  font-family: poppinsregular;
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 10px;
 }
 
 header {
-
-	background: rgb(255,186,119);
-	background: linear-gradient(90deg, rgba(255,186,119,1) 0%, rgba(255,143,0,1) 100%);
-	height: 15vh;
-  width: 100vw;
-  position: fixed, absolute;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  margin-right: 220px;
 }
 
 ul li {
@@ -25,7 +23,7 @@ ul li {
 .link-header {
 	background-color: transparent;
     
-    padding: 20px;
+    padding-right: 20px;
     font: bold 14px/1.4 'Open Sans', arial, sans-serif;
     text-decoration: none;
     font-size: 1rem;
@@ -71,11 +69,86 @@ ul li {
   left: 0; 
 }
 
+h1{
+  font-weight: 200;
+}
+
+
+.container-main{
+  display: flex;
+  flex-direction: row;
+}
+
+.container-main2{
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  font-size: 50px;
+  line-height: 35px;
+  font-family: poppinsmedium;
+}
+
+.h2-medio{
+  font-size: 50px;
+  line-height: 60px;
+  font-family: poppinsmedium;
+}
+
+span{
+  color: rgb(132, 14, 201);
+}
+
+p{
+  line-height: 20px;
+  max-width: 500px;
+  font-family: poppinsligth
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.input-text{
+  margin-top: 12px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+}
+
+.btn-cadastrar{
+  margin-top: 12px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  background-color: #4CBD49;
+  transition: 150ms linear; 
+}
+
+.btn-cadastrar:hover{
+  margin-top: 12px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  background-color: green;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
 .logo {
 	margin-right: auto;
   margin-left: auto;
   height: 14vh;
-  width: 14vh;
+  width: 13vh;
   border-radius: 50%;
   max-height: 14vh;
   max-width: 14vh;
@@ -110,19 +183,8 @@ ul li {
   
 }
 
-
-h1 {
-  font-size: 3rem;
-}
-
-@media (max-width: 800px) {
-  .flex-item-right, .flex-item-left {
-    flex: 100%;
-  }
-}
-
 .action {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 28px;
 }
@@ -137,7 +199,6 @@ h1 {
 }
 
 .action .profile .img {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -226,7 +287,7 @@ h1 {
 }
 
 .action2 {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 88px;
 }
@@ -329,36 +390,9 @@ h1 {
   color: #80D0C7;
 }
 
-table, th, td {
-border: 1px solid black;
-}
-
-table {
-border-collapse: collapse;
-margin: auto;
-}
-
-th, td{
-padding: 10px;
-text-align: center;
-width: 120px;
-}
-
-th{
-font-weight: bold;
-}
-
-
-tr:nth-child(even) {
-background-color: #DCEBE6;
-}
-
-tr:hover:nth-child(1n + 2) {
-background-color: #085F63;
-color: #fff;
-}
-
 .box-amigo-add {
+  position: absolute;
+  z-index: 999;
   border-radius: 5px;
   margin-left: auto;
   margin-top: auto;
@@ -372,7 +406,7 @@ color: #fff;
   font-size: 25px;
   max-width: 80vh;
   max-height: 60vh;
-box-shadow: rgb(38, 57, 77) 30px 30px 10px -10px;
+box-shadow: rgb(38, 57, 77) 30px 3d0px 10px -10px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -396,6 +430,12 @@ box-shadow: rgb(38, 57, 77) 30px 30px 10px -10px;
   width: 52vh;
   height: 5vh;
   border-radius: 10px;
+}
+
+.btn-adicionar:hover {
+  cursor: pointer;
+  background-color: green;
+  width: 53vh;
 }
 
 .btn-fechar {
