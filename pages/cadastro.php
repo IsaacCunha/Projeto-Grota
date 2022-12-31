@@ -1,3 +1,8 @@
+<?php 
+include('../conexao.php');
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +16,24 @@
 	<form name="cadastro" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
 
 		<?php 
-		
+			
 			if(isset($_SESSION['nome_next'])){
-				echo '<input type="text" name="nome" value="'.$_SESSION["nome_next"].'">';
+				echo '<input type="text" name="nome" placeholder="como você se chama?" value="'.$_SESSION["nome_next"].'">';
 			}else{
 				echo '<input type="text" name="nome" placeholder="como você se chama?"> <br> <br>';
 			}
 		?>
 		
 		<input type="text" name="apelido" placeholder="como quer ser chamado?"> <br> <br>
-		<input type="email" name="email" placeholder="qual seu email?"> <br> <br>
+
+		<?php
+		if(isset($_SESSION['email_next'])){
+				echo '<input type="text" name="email" placeholder="Qual seu email?" value="'.$_SESSION["email_next"].'">';
+			}else{
+				echo '<input type="text" name="email" placeholder="Qual seu email?"> <br> <br>';
+			}
+		?>
+
 		<input type="password" name="senha" placeholder="********"> <br> <br>
 		<input type="text" name="descricao" placeholder="Nos conte sobre você"> <br> <br>
 		<input type="date" name="data" placeholder="Em que ano você nasceu?"> <br> <br>
@@ -34,10 +47,6 @@
 </html>
 
 <?php 
-
-session_start();
-
-include('../conexao.php');
 
 if(isset($_POST['cadastrar'])){
 
@@ -146,6 +155,9 @@ if(isset($_POST['cadastrar'])){
 
             				// cria o arquivo na pasta
                             move_uploaded_file($foto['tmp_name'], $dir.$nova_foto); // Exemplo:  $dir.$nova_foto = fotos/Juam@gmail_foto.png
+
+                            $_SESSION['nome_next'] = "";
+                            $_SESSION['email_next'] = "";
 
                             header('location:login.php');
                         }

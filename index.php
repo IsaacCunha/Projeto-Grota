@@ -19,8 +19,8 @@ include('conexao.php');
 		<a href="index.php"><img src="imgs/logo.png" class="logo"></a>
 
 		<ul>
-			<li><a class="link-header a" href="pages/chat1.php">amigos</a></li>
-			<li><a class="link-header a" href="pages/ajuda.php">sla</a></li>
+			<li><a class="link-header a" href="pages/chat1.php">Página 1</a></li>
+			<li><a class="link-header a" href="pages/ajuda.php">Página 2</a></li>
 		</ul>
 
 		<section class="action2">
@@ -114,7 +114,7 @@ include('conexao.php');
 				<aside>
 					<h2><span>Navege pela Grota</span></h2>
 					<h2>Cadastre-se já</h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+					<p>Aqui no projeto Grota você tera acesso à diversas interações com usuários reais e poderá desfrutar de muitas funções exclusivas desenvolvidas diretamente da caixola do desenvolvedor, cadastre-se para desfrutar de toda essa experiência incrivel :)</p>
 
 					<form name="cadastro_index" method="POST" action="#">
 
@@ -123,7 +123,7 @@ include('conexao.php');
 
 						<input class="btn-cadastrar" type="submit" name="next" value="Proxima etapa >>"> <br>
 
-						<a style="align-self: center; font-size: 30px; color: cyan;" href="#">Já tenho uma conta!</a>
+						<a style="align-self: center; font-size: 30px; color: cyan;" href="pages/login.php">Já tenho uma conta!</a>
 
 					</form>
 
@@ -132,7 +132,7 @@ include('conexao.php');
 						if(isset($_POST['next'])){
 							$nome_next = $_POST['nome'];
 							$_SESSION['nome_next'] = $nome_next;
-							$_SESSION['email'] = $_POST['email'];
+							$_SESSION['email_next'] = $_POST['email'];
 
 							header('Location:pages/cadastro.php');
 						}
