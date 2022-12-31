@@ -35,5 +35,17 @@ create table notificacao (
 
 ------------------------------------ campo lógico ------------------------------------
 
-ALTER TABLE contas ADD CONSTRAINT fk_nome_fotos FOREIGN KEY(fk_nome_fotos) REFERENCES fotos(nome_fotos
-);
+tabela chat_grupo
+
+ja tenho a lógica
+
+tabela chat_individual
+
+id_mensagem int          za  
+mensagem varchar		 lu
+id_conta
+id_amigo
+email_conta,
+email_amigo,
+apelido_conta,
+apelido_amigo

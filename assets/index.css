@@ -3,17 +3,24 @@ body {
 	background-color: rgb(34, 34, 34);
   color: white;
   font-family: poppinsregular;
-  max-width: 1200px;
-  margin: 0 auto; 
+  margin-top: 10vh;
   padding: 10px;
+  overflow-x: hidden;
+}
+
+article{
+  margin-top: 10vh;
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 220px;
+
+  background-color: pink;
+  height: 20vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 90;
 }
 
 ul li {
@@ -39,15 +46,23 @@ ul li {
 
 }
 
+.wave {
+    margin-left: -20px;
+    width: 100vw;
+    margin-bottom: 0px;
+    transform: translateY(10px);
+}
+
+
 .a {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  display: inline;
   position: relative;
    text-align: center;
   align-items: center;
+
 
 }
 
@@ -70,7 +85,9 @@ ul li {
 }
 
 h1{
-  font-weight: 200;
+  font-weight: 5000;
+  font-size: 80px;
+  margin-bottom: -30px;
 }
 
 
@@ -86,7 +103,8 @@ h1{
 
 h2{
   font-size: 50px;
-  line-height: 35px;
+  padding-top: -120px;
+  line-height: 50px;
   font-family: poppinsmedium;
 }
 
@@ -155,12 +173,19 @@ form{
 }
 
 .icon {
+
+  height: 9vh;
+  width: 9vh;
+  border-radius: 50%;
+}
+
+.perfil-icon {
   margin-top: 8px;
   margin-right: 28px;
   margin-left: auto;
-  height: 9.6vh;
-  width: 9.6vh;
-  border-radius: 50%;
+  height: 12vh;
+  width: 12vh;
+  border-radius: 20px;
 }
 
 .container-perfil{
@@ -194,16 +219,15 @@ form{
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  overflow: hidden;
   cursor: pointer;
 }
 
 .action .profile .img {
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .action .menu {
@@ -293,21 +317,21 @@ form{
 }
 
 .action2 .profile2{
+  margin-right: 20px;
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
 }
 
 .action2 .profile2 .img2 {
-  position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .action2 .menu2 {
@@ -406,7 +430,7 @@ form{
   font-size: 25px;
   max-width: 80vh;
   max-height: 60vh;
-box-shadow: rgb(38, 57, 77) 30px 3d0px 10px -10px;
+box-shadow: rgb(38, 57, 77) 30px 30px 10px -10px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -466,4 +490,103 @@ box-shadow: rgb(38, 57, 77) 30px 3d0px 10px -10px;
   width: 50vh;
   height: 5vh;
   border-radius: 10px;
+}
+
+.funcoes{
+  margin-left: -20px;
+  background-color: #0099ff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+.funcoes-img {
+  width: 250px;
+  height: 250px;
+  transition: 300ms linear;
+  cursor: pointer;
+}
+
+.funcoes-img:hover {
+  width: 300px;
+  height: 300px;
+  transform: scale(1.2);
+}
+
+.footer_container{
+  width: 100vw;
+  height: auto;
+  background-color: #283639;
+  max-width: 100%;
+}
+.footer{
+  display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 0px;
+    row-gap: 0px;
+}
+.logo_footer{
+    margin-right: auto;
+    margin-left: auto;
+  height: 24.8vh;
+}
+.primeira_coluna{
+  grid-column-start: 1;
+}
+.segunda_coluna{
+  grid-column-start: 2;
+    display: flex;
+}
+.terceira_coluna{
+  grid-column-start: 3;
+    text-align: center;
+}
+.social_media{
+  width: 5vh;
+  filter: invert(1);
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateX(-10vh);
+
+}
+.social_media2{
+  width: 5vh;
+  filter: invert(1);
+    transform: translate(10vh, -5vh);
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo-footer{
+  font-size: 2rem;
+  color: white;
+    text-align: center;
+}
+.footer-quem-somos{
+  color: white;
+    text-align: center;
+    font-family: var(--base-font);
+    font-size: 1.4em;
+}
+.titulo-footer-quem-somos{
+  font-size: 2rem;
+  color: white;
+    text-align: center;
+}
+#footer-quem-somos_nome{
+    color: #ffb83d;
+    font-size: 2rem;
+    font-family: var(--titulo-font);
+    text-align: center;    
+}
+.testepreview{
+    background-image: url("https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png");
+}
+@media (max-width: 1350px) {
+    .quem-somos_img {
+        height: 400px;
+        margin-left: auto;
+        padding-top: 100px;
+    }
 }
