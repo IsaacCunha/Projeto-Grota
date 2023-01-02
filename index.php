@@ -20,14 +20,14 @@ include('conexao.php');
 
 		<ul style="display: inline;">
 			<li><a class="link-header a" href="pages/chat1.php">Página 1</a></li>
-			<li><a class="link-header a" href="pages/ajuda.php">Página 2</a></li>
+			<li><a class="link-header a" href="pages/chats.php">Chats</a></li>
 		</ul>
 
 		<section class="action2">
 
 			<section class="profile2" onclick=" menuToggle2();">
 
-				<img class="icon" style="width: 60px; height: 60px; margin-top: 8px; margin-left: 10px; position: fixed;" src="imgs/amigos.png"> 
+				<img class="icon" style="width: 60px; height: 60px; margin-left: 10px; position: fixed;" src="imgs/amigos.png"> 
 
 			</section>
 			<section class="menu2">

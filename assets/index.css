@@ -15,7 +15,7 @@ article{
 header {
 
   background-color: pink;
-  height: 20vh;
+  height: 15vh;
   width: 100vw;
   position: fixed;
   left: 0;
@@ -43,6 +43,7 @@ ul li {
     max-height: 15vh;
     max-width: 15vh;
      grid-template-columns: 3fr 3fr 2fr 1fr;
+     padding-top: 15px;
 
 }
 
