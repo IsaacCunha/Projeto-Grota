@@ -1,5 +1,6 @@
 body{
 	overflow: hidden;
+	margin-top: 5vh;
 }
 
 .container-main{
@@ -24,16 +25,21 @@ body{
 	height: 100vh;
 	margin-right: -20px;
 	border-left: solid white 4px;
+	padding-left: 10px;
 }
 
 .container-enviar-mensagens{
-	padding-left: 60px;
+	padding-left: 30px;
+	padding-right: 30px;
 	padding-top: 15px;
 	align-items: center;
 	z-index: 100;
 	background-color: red;
 	padding-bottom: 100%;
 	margin-top: 77vh;
+	margin-left: -10px;
+	position: sticky;
+	width: auto;
 }
 
 .foto{
@@ -45,26 +51,15 @@ body{
 .primeiro-dentro{
 	border: 1px solid darkgray;
 	background-color: rgb(37, 37, 37);
-	margin-left: -20px;
-	padding-left: 20px;
-	margin-top: -15px;
-	padding-bottom: 20px;
-}
-
-.dentro{
-	border: 1px solid darkgray;
-	background-color: rgb(37, 37, 37);
-	margin-left: -20px;
-	padding-left: 20px;
 	margin-top: 10px;
-	padding-bottom: 30px;
+	margin-left: -20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
 }
 
 .primeiro-dentro:hover{
-	background-color: red;
 	margin-left: -20px;
 	padding-left: 20px;
-	margin-top: -15px;
 	padding-bottom: 20px;
 	background-color: rgb(67, 67, 67);
 	margin-left: -20px;
@@ -72,20 +67,30 @@ body{
 	cursor: pointer;
 }
 
-.dentro:hover{
-	background-color: rgb(67, 67, 67);
-	margin-left: -20px;
-	padding-left: 20px;
-	cursor: pointer;
+.img-dentro{
+	width: 100px;
+	height: 100px;
+	margin-left: 260px;
+	margin-top: -50px;
+	filter: invert(1);
+}
+
+.img-dentro:hover{
+	width: 100px;
+	height: 100px;
+	margin-left: 260px;
+	margin-top: -50px;
+	filter: invert(0);
+
 }
 
 .enviar-mensagem{
 
 	border-radius: 8px;
-	width: 130%;
+	width: 140%;
 	height: 40px;
 	background-color: rgb(210, 210, 210);
 	font-size: 20px;
 	padding-left: 8px;
-	z-index: 70;
+	z-index: 70;         
 }

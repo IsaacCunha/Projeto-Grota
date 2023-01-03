@@ -33,6 +33,17 @@ create table notificacao (
 	apelido varchar(255) not null
 );
 
+create table chats (
+	id_mensagem int(9) auto_increment not null primary key,
+	id_conta int(9) not null,
+	id_amigo int(9) not null,
+	mensagem varchar(255) not null,
+	fk_id_conta int(9) not null,
+	fk_id_amigo int(9) not null,
+	fk_nome_fotos varchar(255) not null,
+	fk_apelido varchar(255) not null
+);
+
 ------------------------------------ campo lógico ------------------------------------
 
 tabela chat_grupo
