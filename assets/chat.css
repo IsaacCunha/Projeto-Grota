@@ -16,16 +16,21 @@ body{
 	width: 30vw;
 	height: 100vh;
 	margin-left: -20px;
+	border-right: solid white 4px;
 	overflow: scroll;
 }
 
 .container-mensagens{
-	background-color: rgb(64, 100, 67);
+	background-color: rgb(34, 34, 34);
 	width: 70vw;
-	height: 100vh;
+	height: 70vh;
 	margin-right: -20px;
-	border-left: solid white 4px;
 	padding-left: 10px;
+	overflow: scroll;
+	padding-top: 50px;
+
+}::-webkit-scrollbar {
+    width: 0px;
 }
 
 .container-enviar-mensagens{
@@ -33,13 +38,30 @@ body{
 	padding-right: 30px;
 	padding-top: 15px;
 	align-items: center;
-	z-index: 100;
-	background-color: red;
-	padding-bottom: 100%;
-	margin-top: 77vh;
+	z-index: 1;
+	border-radius: 15px;
+	background-color: rgb(34, 34, 34);
+	padding-bottom: 15vh;
+	margin-top: 70vh;
 	margin-left: -10px;
-	position: sticky;
-	width: auto;
+	position: fixed;
+	width: 65vw;
+
+}
+
+.enviar-mensagem{
+
+	border-radius: 8px;
+	width: 65vw;
+	height: 40px;
+	background-color: rgb(210, 210, 210);
+	font-size: 20px;
+	padding-left: 8px;
+	z-index: 70;         
+}
+
+.btn-enviar-mensagem{
+
 }
 
 .foto{
@@ -68,29 +90,28 @@ body{
 }
 
 .img-dentro{
-	width: 100px;
-	height: 100px;
+	width: 55px;
+	height: 55px;
 	margin-left: 260px;
-	margin-top: -50px;
+	margin-top: -48px;
 	filter: invert(1);
+	position: absolute;
+	transition: 150ms linear; 
 }
 
 .img-dentro:hover{
-	width: 100px;
-	height: 100px;
+	width: 60px;
+	height: 60px;
 	margin-left: 260px;
 	margin-top: -50px;
 	filter: invert(0);
+	transform: scale(1.00);
 
 }
 
-.enviar-mensagem{
+.img-perfil{
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
 
-	border-radius: 8px;
-	width: 140%;
-	height: 40px;
-	background-color: rgb(210, 210, 210);
-	font-size: 20px;
-	padding-left: 8px;
-	z-index: 70;         
 }

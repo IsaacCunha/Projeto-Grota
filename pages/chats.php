@@ -108,12 +108,8 @@ include('../conexao.php');
 									<section class="primeiro-dentro">
 										<img src="'.$dir.$con['fk_nome_fotos'].'" class="foto" style="padding-top: 15px;">
 										<p style="margin-left: 70px; margin-top: -55px;">'.$con['nome'].'</p>
-										<img src="../imgs/deslogar.png" class="img-dentro">
-											
-										
+										<a href="chats.php?id='.$con['id'].'"><img src="../imgs/deslogar.png" class="img-dentro"></a>
 									</section>
-									
-
 							');
 						}?>
 					</section>
@@ -121,13 +117,19 @@ include('../conexao.php');
 
 				<section class="container-mensagens">
 
-					
+					<section class="container-enviar-mensagens">
+						<form name="enviar-mensagem" method="POST">
+							<input type="text" name="mensagem" class="enviar-mensagem">
+							<input type="submit" name="enviar-mensagem" class="btn-enviar-mensagem">
+					        
+						</form>
+	</section>
 					
 				
 
 			<?php
 				if(isset($_GET['id'])){
-				$id_amigo = 3;
+				$id_amigo = $_GET['id'];
 
 					$sqlacc = "SELECT * FROM contas INNER JOIN fotos ON contas.id = fotos.id_fotos Where id= ". $_SESSION['id'] .";";
 				    $sql_exec = mysqli_query($conexao, $sqlacc);
@@ -139,17 +141,17 @@ include('../conexao.php');
 
 					$_SESSION['email'] = $sql_result['email'];
 
-					echo ('<table><tr><td></td></tr>'); //correto acima
+					 //correto acima
 
-		        	$sql_code = 'SELECT * FROM chats WHERE id_mensagem ORDER BY id_mensagem ASC;';
+		        	$sql_code = 'SELECT * FROM chats WHERE id_amigo = "'.$id_amigo.'" and id_conta = "'.$_SESSION['id'].'" or id_amigo = "'.$_SESSION['id'].'" and id_conta = "'.$id_amigo.'";';
 		        	$sql_exec = mysqli_query($conexao, $sql_code);
 		        	$sql_result = mysqli_fetch_array($sql_exec);
-
+		        	echo ('<table>');
 					while ($con = mysqli_fetch_array($sql_exec)){
 						$nova_foto = $con['fk_nome_fotos'];
 						
 					//a linha abaixo puxa a foto de quem mandou a mensagem abaixo e mansagem
-					echo('<tr><td rowspan="2">'.'<img src="'.$dir.$nova_foto.'">'.'</td><td class="chat-nome">'.$con['fk_apelido'].'</td></tr><tr><td class="chat-mensagem">'.$con['mensagem'].'</td></tr>'); 			
+					echo('<tr><td rowspan="2">'.'<img class="img-perfil" src="'.$dir.$nova_foto.'">'.'</td><td>'.$con['fk_apelido'].'</td></tr><tr><td>'.$con['mensagem'].'</td></tr>'); 			
 					}
 
 					echo ('</table>');
@@ -172,42 +174,21 @@ include('../conexao.php');
 					$_SESSION['nome'] = $sql_result['nome'];
 					 
 
-					$sqlcad = 'insert into chats(id_conta, id_amigo, mensagem, fk_nome_fotos, fk_apelido) values ("'.$id_conta.'", "'.$id_amigo.'", "'.$mensagens.'", "'.$nome_fotos.'","'.$apelido.'");';
+					$sqlcad = 'insert into chats(id_conta, id_amigo, mensagem, fk_nome_fotos, fk_apelido) values ('.$id_conta.', '.$id_amigo.', "'.$mensagens.'", "'.$nome_fotos.'","'.$apelido.'");';
 		            $sql_exec = mysqli_query($conexao, $sqlcad);
-
-		        	/*Foto de perfil e nome de perfil */
-		        	echo ('<table><tr><td></td></tr>'); //correto acima
-		        	
-		        	$sql_code = 'SELECT * FROM chats WHERE id_mensagem = 1;';
-		        	$sql_exec = mysqli_query($conexao, $sql_code);
-		        	$sql_result = mysqli_fetch_array($sql_exec);
-		        	$linhas = mysqli_num_rows($sql_exec);
-		        	$mensagem = $sql_result['mensagem'];
+		            ?>
+		            <script> location.replace('chats.php?id='$id_amigo'');</script>
+		            <?php
 
 
-					$nova_foto = $sql_result['fk_nome_fotos'];
-					
-
-					
-					
-
-					echo('<section style="margin-top: 300px;"><tr style="margin-top: 500px;"><td rowspan="2">'.'<img src="'.$dir.$nova_foto.'">'.'</td><td class="chat-nome">'.$sql_result['fk_apelido'].'</td></tr><tr><td class="chat-mensagem">'.$mensagem.'</td></tr></section>'); 			
-					
-
-					echo ('</table>');
-					}
+		        	}
 }
 	?>
 
 
-
-	<section class="container-enviar-mensagens">
-						<form>
-							<input type="text" name="enviar-mensagem" class="enviar-mensagem">
-						</form>
-					</section>
+	
 	</section>
 
-			</section>
+	</section>
 </body>
 </html>
